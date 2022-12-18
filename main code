@@ -1,0 +1,92 @@
+class Kingdom {  
+    constructor(typeOfKingdom) {    
+      this.typeOfKingdom = typeOfKingdom;
+     if (this.constructor === Kingdom) {
+       throw new Error ('kingdom cannot be instantiated or called')
+     }
+    }
+    hastwoeyes () {
+      console.log ('This animal has two eyes');
+    }
+  }
+  
+  class Animalkingdom extends Kingdom { 
+   constructor (withBone, withoutBone, coldBlooded, warmBlooded) {
+     super ();
+     this.withBone = withBone;
+     this.withoutBone = withoutBone;
+     this.coldBlooded = coldBlooded;
+     this.warmBlooded = warmBlooded;
+      }
+    numberOfAnimal = 6
+  }
+  const animalkingdom = new Animalkingdom ()
+  
+  
+  class Arthropoda extends Animalkingdom { 
+    constructor (withoutBone, coldBlooded) {
+     super ();
+    this.withouBone = withoutBone; // make thia a boolean
+    this.coldBlooded = coldBlooded ;
+  }
+    numberOfArthropoda = 1
+    #eat () {
+      console.log ('I am eating')
+    }
+      eat () {
+       this.#eat () 
+        console.log ("animals can eat")
+    }
+  }
+  const butterfly = new Arthropoda ()
+  
+  class Fish extends Animalkingdom { 
+   constructor (withBone, coldBlooded) {
+     super ();
+     this.withBone = withBone;
+     this.coldBlooded = coldBlooded; 
+   }
+    numberOfAnimal = 1
+  }
+  const fish = new Fish ()
+  
+  class Amphibia extends Animalkingdom {  // creating the class amphibia to inherit from the class Animalkingdom
+    constructor (withBone, coldBlooded) {
+      super ();
+      this.withBone = withBone; // property of the class amphibia
+      this.coldBlooded = coldBlooded;
+    }
+    numberOfAnimals = 1 // property of the class amphibia
+  }
+  const frog = new Amphibia ()
+  
+  class Reptile extends Animalkingdom {
+    constructor (withBone, coldBlooded) {
+      super ();
+      this.withBone = withBone;
+      this.coldBlooded = coldBlooded;
+    }
+    numberOfAnimals = 1
+  }
+  const tortoise = new Reptile () 
+  
+  class AVES extends Animalkingdom {
+    constructor (withBone, warmBlooded) {
+      super ();
+      this.withBone = withBone;
+      this.warmBlooded = warmBlooded;
+    }
+    numberOfAnimals = 1
+  }
+  const bird = new AVES () 
+  
+  class Mammal extends Animalkingdom {
+    constructor (withBone, warmBlooded) {
+      super ();
+      this.withBone = withBone;
+      this.warmBlooded = warmBlooded;
+    }
+    numberOfAnimals = 1
+  }
+  const cat = new Mammal ()
+  
