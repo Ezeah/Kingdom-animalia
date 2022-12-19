@@ -1,0 +1,160 @@
+class Kingdom {
+  constructor() {
+     if (this.constructor === Kingdom) {
+     throw new Error ('kingdom cannot be instantiated or called')
+   } 
+  }
+}
+  
+class AnimalKingdom extends Kingdom {
+  constructor(name, skeletalStructure, bodyTemperature) {
+    super ()
+    this.name = name;
+    this.skeletalStructure = skeletalStructure;
+    this.bodyTemperature = bodyTemperature;
+  }
+
+  #eat () {
+    console.log('Animals can eag')
+  }
+  
+  eat () {
+    this.#eat ()
+    console.log(`${this.name} that are ${this.bodyTemperature} and also ${this.skeletalStructure} can eat.`);
+  }
+}
+
+class Arthropoda extends AnimalKingdom {
+  constructor(name, skeletalStructure, bodyTemperature, habitat) {
+    super(name, skeletalStructure, bodyTemperature);
+    this.habitat = habitat;
+  }
+
+  reproduce() {
+    console.log(`${this.name} with ${this.skeletalStructure} can reproduce.`);
+  }
+}
+
+class Fish extends Arthropoda {
+  constructor(name, skeletalStructure, bodyTemperature, habitat, lifespan) {
+    super(name, skeletalStructure, bodyTemperature, habitat);
+    this.lifespan = lifespan;
+  }
+
+  swim () {
+    console.log(`${this.name} with ${this.skeletalStructure} and ${this.bodyTemperature} love to swim.`);
+  }
+}
+
+class Amphibia extends Fish {
+  constructor(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey) {
+    super(name, skeletalStructure, bodyTemperature, habitat, lifespan);
+    this.prey = prey;
+  }
+
+ jump () {
+    console.log(`${this.name} with ${this.skeletalStructure} loves to jumps on ${this.habitat}.`);
+  }
+}
+
+class Reptiles extends Amphibia {
+  constructor(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey, diet) {
+    super(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey);
+    this.diet = diet;
+  }
+
+  territorial () {
+    console.log(`${this.name} with ${this.skeletalStructure} and ${this.bodyTemperature} are territorial.`);
+  }
+}
+
+class Aves extends Reptiles {
+  constructor(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey, diet, wingspan) {
+    super(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey, diet);
+    this.wingspan = wingspan;
+  }
+
+  fly() {
+    console.log(`A ${this.name} ${this.skeletalStructure} and ${this.wingspan} span of wings for flying.`);
+  }
+}
+
+class Mammal extends Aves {
+  constructor(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey, diet, sound) {
+    super(name, skeletalStructure, bodyTemperature, habitat, lifespan, prey, diet);
+    this.sound = sound;
+  }
+
+  claws () {
+    console.log(` The ${this.name} ${this.skeletalStructure} and ${this.bodyTemperature} loves to claw.`);
+  }
+}
+
+const animalkingdom = new AnimalKingdom ('animalkingdom', 'withbone and withoutbone', 'coldblooded and warmblooded')
+const arthropoda = new Arthropoda ('butterfly', 'withoutbone', 'coldblooded', 'land and air')
+const fish = new Fish ('fish', 'withbone', 'coldblooded', 'water','five years')
+const amphibia = new Amphibia ('frog', 'withbone', 'coldblooded', 'water and land','twelve years', 'insects')
+const reptiles = new Reptiles ('tortoise', 'withbone', 'coldblooded', 'water and land','fifty years', 'fungi', 'vegetables')
+const aves = new Aves ('bird', 'withbone', 'warmblooded', 'air and land','fifty years', 'chicks', 'carrion', 'one hundred and twenty centimeters')
+const mammal = new Mammal ('cat', 'withbone', 'warmblooded', 'land','fourteen years', 'rat', 'rice', 'meow')
+
+console.log (animalkingdom.name)
+console.log (animalkingdom.bodyTemperature)
+console.log (animalkingdom.skeletalStructure)
+animalkingdom.eat ()
+
+console.log (arthropoda.name)
+console.log (arthropoda.bodyTemperature)
+console.log (arthropoda.skeletalStructure)
+console.log (arthropoda.habitat)
+console.log (arthropoda.reproduce)
+console.log (arthropoda.eat)
+
+console.log (fish.name)
+console.log (fish.bodyTemperature)
+console.log (fish.skeletalStructure)
+console.log (fish.habitat)
+console.log (fish.lifespan)
+console.log (fish.swim)
+console.log (fish.eat)
+
+console.log (amphibia.name)
+console.log (amphibia.bodyTemperature)
+console.log (amphibia.skeletalStructure)
+console.log (amphibia.habitat)
+console.log (amphibia.lifespan)
+console.log (amphibia.prey)
+console.log (amphibia.jump)
+console.log (amphibia.eat)
+
+console.log (reptiles.name)
+console.log (reptiles.bodyTemperature)
+console.log (reptiles.skeletalStructure)
+console.log (reptiles.habitat)
+console.log (reptiles.lifespan)
+console.log (reptiles.prey)
+console.log (reptiles.diet)
+console.log (reptiles.territorial)
+console.log (reptiles.eat)
+
+console.log (aves.name)
+console.log (aves.bodyTemperature)
+console.log (aves.skeletalStructure)
+console.log (aves.habitat)
+console.log (aves.lifespan)
+console.log (aves.prey)
+console.log (aves.diet)
+console.log (aves.wingspan)
+console.log (aves.fly)
+console.log (aves.eat)
+
+console.log (mammal.name)
+console.log (mammal.bodyTemperature)
+console.log (mammal.skeletalStructure)
+console.log (mammal.habitat)
+console.log (mammal.lifespan)
+console.log (mammal.prey)
+console.log (mammal.diet)
+console.log (mammal.sound)
+console.log (mammal.claws)
+console.log (mammal.eat)
