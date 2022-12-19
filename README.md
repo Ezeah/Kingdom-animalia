@@ -5,3 +5,5 @@ Firstly, we defined an abstract class named Kingdom that cannot be called or ins
 Inconclusion, We defined eight classes for the kingdom animalia. Each of these subclasses extends the Animal class and provides a specific implementation of their property in the constructor using the super keyword to call the base class constructor. We then created instances of these classes using the new keyword and called the method on them to see their different properties and methods. 
 
 Finally, for the purpose of testing the code, the properties and methods were logged to console. All you need to do is to run the code but for the abstract class what you need to do to throw error is to instantiat the class.
+
+please note that the final commit is the main code.
